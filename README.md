@@ -11,7 +11,7 @@
 [![Firebase](https://img.shields.io/badge/Firebase-10.0-orange.svg)](https://firebase.google.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-[Fonctionnalités](#-fonctionnalités-principales) • [Installation](#-installation) • [Documentation](#-documentation) • [Captures d'écran](#-captures-décran)
+[🎯 Fonctionnalités](#-fonctionnalités-principales) • [📦 Installation](#-installation) • [📚 Documentation](#-documentation) • [📸 Captures d'écran](#-captures-décran)
 
 </div>
 
@@ -114,22 +114,6 @@ Une application mobile **tout-en-un** qui digitalise l'intégralité de la gesti
 - ✅ **Protection des données** avec chiffrement
 - ✅ **Gestion des rôles** (propriétaire, employé, admin)
 - ✅ **Sauvegarde cloud automatique**
-
----
-
-## 🎨 Captures d'Écran
-
-<div align="center">
-
-| Dashboard | Gestion Stock | Facturation |
-|:---------:|:-------------:|:-----------:|
-| ![Dashboard](https://via.placeholder.com/250x500?text=Dashboard) | ![Stock](https://via.placeholder.com/250x500?text=Stock) | ![Facture](https://via.placeholder.com/250x500?text=Facture) |
-
-| Boutique en Ligne | Statistiques | Historique |
-|:-----------------:|:------------:|:----------:|
-| ![Shop](https://via.placeholder.com/250x500?text=Shop+Online) | ![Stats](https://via.placeholder.com/250x500?text=Statistiques) | ![History](https://via.placeholder.com/250x500?text=Historique) |
-
-</div>
 
 ---
 
