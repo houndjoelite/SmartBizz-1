@@ -11,7 +11,7 @@
 [![Firebase](https://img.shields.io/badge/Firebase-10.0-orange.svg)](https://firebase.google.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-[Démo](#-démo) • [Fonctionnalités](#-fonctionnalités) • [Installation](#-installation) • [Documentation](#-documentation)
+[Fonctionnalités](#-fonctionnalités-principales) • [Installation](#-installation) • [Documentation](#-documentation) • [Captures d'écran](#-captures-décran)
 
 </div>
 
@@ -38,7 +38,7 @@ Une application mobile **tout-en-un** qui digitalise l'intégralité de la gesti
 
 ---
 
-## 🎯 Fonctionnalités Principales
+## 🎯 Fonctionnalités Principales <a id="fonctionnalites"></a>
 
 ### 📦 Gestion Intelligente des Produits & Stock
 
@@ -375,19 +375,19 @@ service firebase.storage {
 Créez le fichier `.env.local` à la racine du projet :
 
 ```env
-# Firebase Configuration
-FIREBASE_API_KEY=AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-FIREBASE_AUTH_DOMAIN=smartbizz-xxxxx.firebaseapp.com
-FIREBASE_PROJECT_ID=smartbizz-xxxxx
-FIREBASE_STORAGE_BUCKET=smartbizz-xxxxx.appspot.com
+# Firebase Configuration - Remplacer avec vos propres identifiants
+FIREBASE_API_KEY=votre_cle_api_firebase
+FIREBASE_AUTH_DOMAIN=votre-projet.firebaseapp.com
+FIREBASE_PROJECT_ID=votre-projet-id
+FIREBASE_STORAGE_BUCKET=votre-projet.appspot.com
 FIREBASE_MESSAGING_SENDER_ID=123456789012
 FIREBASE_APP_ID=1:123456789012:web:abcdefghijklmnop
 
 # Expo Configuration
-EXPO_PUBLIC_API_URL=https://api.smartbizz.com
+EXPO_PUBLIC_API_URL=https://votre-api.smartbizz.com
 
 # Payment Providers (Wave, Orange Money, etc.)
-WAVE_API_KEY=your_wave_api_key
+WAVE_API_KEY=votre_cle_api_wave
 ORANGE_MONEY_API_KEY=your_orange_money_api_key
 
 # Analytics (optional)
@@ -444,17 +444,17 @@ SmartBizz/
 │   │   ├── forms/                     # Composants de formulaires
 │   │   │   ├── ProductForm.js         # Formulaire produit
 │   │   │   ├── InvoiceForm.js         # Formulaire facture
-│   │   │   └── ExpenseForm.js         # Formulaire dépense
+│   │   └── ExpenseForm.js             # Formulaire dépense
 │   │   ├── layout/                    # Mise en page
 │   │   │   ├── Header.js              # En-tête de navigation
 │   │   │   ├── Footer.js              # Pied de page
 │   │   │   ├── Sidebar.js             # Menu latéral
-│   │   │   └── TabBar.js              # Barre d'onglets
+│   │   └── TabBar.js              # Barre d'onglets
 │   │   ├── business/                  # Composants métier
 │   │   │   ├── ProductCard.js         # Carte produit
 │   │   │   ├── SaleItem.js            # Ligne de vente
 │   │   │   ├── InvoicePreview.js      # Aperçu facture
-│   │   │   └── StockAlert.js          # Alerte de stock
+│   │   └── StockAlert.js          # Alerte de stock
 │   │   └── charts/                    # Graphiques
 │   │       ├── SalesChart.js          # Graphique des ventes
 │   │       ├── RevenueChart.js        # Graphique des revenus
@@ -469,7 +469,7 @@ SmartBizz/
 │   │   ├── dashboard/                 # Tableau de bord
 │   │   │   ├── DashboardScreen.js     # Vue d'ensemble
 │   │   │   ├── StatsScreen.js         # Statistiques détaillées
-│   │   │   └── ReportsScreen.js       # Rapports
+│   │   └── ReportsScreen.js       # Rapports
 │   │   ├── products/                  # Gestion produits
 │   │   │   ├── ProductListScreen.js   # Liste des produits
 │   │   │   ├── ProductDetailScreen.js # Détail produit
@@ -605,45 +605,33 @@ SmartBizz/
 ## 📸 Captures d'écran
 
 ### 🏠 Tableau de bord
-![Tableau de bord](/public/dashboard.png)
+>![Tableau de bord](/public/dashboard.png)
 
-### 📱 Connexion
-![Écran de connexion](/public/login.png)
+### 🔐 Authentification
+#### Connexion
+>![Écran de connexion](/public/Connexion.png)
 
-### 📝 Inscription
-![Écran d'inscription](/public/register.png)
+#### Inscription
+>![Étape 1 d'inscription](/public/Inscription%201.png)
+>![Étape 2 d'inscription](/public/Inscription%202.png)
+>![Étape 3 d'inscription](/public/Inscription%203.png)
+>![Étape 4 d'inscription](/public/Inscription%204.png)
 
-### 🔍 Gestion des produits
-![Liste des produits](/public/products.png)
+### 📦 Gestion des stocks
+>![Inventaire 1](/public/Inventaire%201.png)
+>![Inventaire 2](/public/Inventaire%202.png)
 
-### � Inventaire
-#### Vue d'ensemble de l'inventaire
-![Inventaire 1](/public/Inventaire%201.png)
+### 💳 Facturation
+>![Écran de facturation](/public/facture%20(2).png)
 
-#### Détails des mouvements de stock
-![Inventaire 2](/public/Inventaire%202.png)
-
-### �� Facturation
-![Écran de facturation](/public/facture%20(2).png)
-
-### 📊 Tableaux de bord statistiques
-#### Vue d'ensemble des statistiques
-![Statistiques 1](/public/stats1.png)
-
-#### Analyse des ventes
-![Statistiques 2](/public/stats2.png)
-
-#### Performance des produits
-![Statistiques 3](/public/stats3.png)
-
-#### Graphiques avancés
-![Statistiques 4](/public/stats4.png)
-
-### 🗂️ Menu latéral
-![Menu latéral](/public/sidebar.png)
+### 📊 Statistiques
+>![Statistiques 1](/public/stats1.png)
+>![Statistiques 2](/public/stats2.png)
+>![Statistiques 3](/public/stats3.png)
+>![Statistiques 4](/public/stats4.png)
 
 ### ⚙️ Paramètres
-![Écran des paramètres](/public/parametre.png)
+>![Écran des paramètres](/public/parametre.png)
 
 ## 🧪 Tests & Validation
 

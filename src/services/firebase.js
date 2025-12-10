@@ -3,16 +3,20 @@ import { getAuth, connectAuthEmulator } from 'firebase/auth';
 import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore';
 import { getStorage, connectStorageEmulator } from 'firebase/storage';
 
-// Configuration Firebase - REMPLACE CES VALEURS PAR TES VRAIES CLÉS
+// Configuration Firebase - Utilisation des variables d'environnement
 const firebaseConfig = {
-  apiKey: "AIzaSyByAtUwLUy8-VlHpr5LDmglAe7O7j6hTIQ",
-  authDomain: "entrepreneur-africa.firebaseapp.com",
-  projectId: "entrepreneur-africa",
-  storageBucket: "entrepreneur-africa.appspot.com",
-  messagingSenderId: "606185649607",
-  appId: "1:606185649607:web:cb20c25d133b42727415e2",
-  measurementId: "G-SG1KR8RJWL"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
+
+if (!firebaseConfig.apiKey) {
+  console.error("Erreur: La clé API Firebase n'est pas configurée. Veuillez définir les variables d'environnement nécessaires.");
+}
 
 // Initialiser Firebase
 const app = initializeApp(firebaseConfig);
