@@ -1,0 +1,34 @@
+# TEST TOPBAR - Instructions
+
+## Ouvrez la console du navigateur (F12)
+
+Puis tapez ces commandes une par une :
+
+### 1. Vérifier si TopBar existe
+```javascript
+document.querySelectorAll('div').forEach(d => {
+  if(d.style.height === '64px') console.log('TopBar trouvée!', d)
+})
+```
+
+### 2. Vérifier le contenu
+```javascript
+document.body.innerText.includes('Architect')
+```
+
+### 3. Vérifier si LayoutWithSidebar est utilisé
+```javascript
+console.log('Texte de la page:', document.body.innerText.substring(0, 500))
+```
+
+## Résultats attendus:
+- TopBar trouvée! → OUI = TopBar est là
+- true → Le mot "Architect" est présent
+- Vous devez voir "Architect", "Rechercher", etc.
+
+## Si vous NE voyez PAS "TopBar trouvée!"
+Alors la TopBar ne se rend pas. Problème dans le code.
+
+## Envoyez-moi ce que vous voyez !
+
+

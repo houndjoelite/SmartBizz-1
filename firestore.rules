@@ -1,0 +1,122 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ============================================
+    // RÈGLES POUR LES UTILISATEURS
+    // ============================================
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // ============================================
+    // RÈGLES POUR L'INVENTAIRE
+    // ============================================
+    match /inventory/{userId}/products/{productId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // CORRECTION : Chemin alternatif utilisé dans certains services
+    match /products/{userId}/list/{productId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // ============================================
+    // RÈGLES POUR LES VENTES
+    // ============================================
+    match /sales/{userId}/transactions/{saleId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // CORRECTION : Chemin alternatif utilisé dans certains services
+    match /sales/{userId}/list/{saleId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // ============================================
+    // RÈGLES POUR LES PERTES
+    // ============================================
+    match /losses/{userId}/records/{lossId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // ============================================
+    // RÈGLES POUR LES FACTURES
+    // ============================================
+    match /invoices/{userId}/documents/{invoiceId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // ============================================
+    // RÈGLES POUR L'HISTORIQUE DES PRODUITS
+    // ============================================
+    // CORRECTION : userId doit être dans le chemin
+    match /history/{userId}/records/{historyId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // ============================================
+    // RÈGLES POUR LES CLIENTS
+    // ============================================
+    match /clients/{userId}/list/{clientId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // ============================================
+    // RÈGLES POUR LES PARAMÈTRES
+    // ============================================
+    match /settings/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // ============================================
+    // RÈGLES POUR LES NOTIFICATIONS
+    // ============================================
+    match /notifications/{userId}/list/{notificationId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // ============================================
+    // RÈGLES POUR LES APPAREILS CONNECTÉS
+    // ============================================
+    match /devices/{userId}/list/{deviceId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // ============================================
+    // RÈGLES POUR LES SAUVEGARDES
+    // ============================================
+    match /backups/{userId}/list/{backupId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // ============================================
+    // RÈGLES POUR LES FOURNISSEURS (NOUVEAU)
+    // ============================================
+    match /suppliers/{userId}/list/{supplierId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // ============================================
+    // RÈGLES POUR LES CATÉGORIES (NOUVEAU)
+    // ============================================
+    match /categories/{userId}/list/{categoryId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // ============================================
+    // RÈGLES POUR LES LOGS/AUDIT (NOUVEAU)
+    // ============================================
+    match /logs/{userId}/activities/{logId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // ============================================
+    // PAR DÉFAUT, TOUT EST INTERDIT
+    // ============================================
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
